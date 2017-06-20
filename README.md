@@ -1,6 +1,6 @@
 # :soccer: FootyLinks :soccer: 
 
-This web app was inspired by my [previous project](https://github.com/jctissier/Euro2016_TerminalApp)
+Inspired by my [previous project](https://github.com/jctissier/Euro2016_TerminalApp)
 
 FootyLinks is a web app that scrapes football content in real time, such as:
 
