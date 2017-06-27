@@ -8,7 +8,7 @@ FootyLinks is a web app that scrapes football (soccer) content in real time:
 * Links for any live match streams
 * Lots of stats: Fixtures, standings, topscorers...
 
-No logins or emails required and there will **never** be Ad! Just a fun side project that I needed to fix those football cravings without the headache of clicking through multiple websites 😀.
+No logins or emails required and there will **never** be Ads! Just a fun side project that I really needed to fix those football cravings without the headache of clicking through multiple websites 😀.
 
 
 ## Notes
