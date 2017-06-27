@@ -8,9 +8,11 @@ FootyLinks is a web app that scrapes football (soccer) content in real time:
 * Links for any live match streams
 * Lots of stats: Fixtures, standings, topscorers...
 
-Built with Python/Flask, hosted on Heroku (Free Tier!)
-
 No logins or emails required and there will **never** be Ad! Just a fun side project that I needed to fix those football cravings without the headache of clicking through multiple websites 😀.
+
+
+## Notes
+Built with Python/Flask, hosted on Heroku (Free Tier!). 
 
 ## Author
 Jean-Claude Tissier
