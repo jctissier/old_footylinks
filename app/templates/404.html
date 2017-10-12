@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+
+{% block body %}
+    <section id="page">
+        <section id="content" class="mt30 pb30">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 col-md-offset-3">
+                        <article class="boxIcon hover text-center" >
+                            <a href=https://github.com/jctissier class="tips" data-original-title="Fork me on Github"
+                            style="padding-top:0px;padding-bottom: 5px;"> <i class="icon-github-circled iconBig iconRounded"></i></a>
+                            <h1> <img style="margin-right: 15px;" width="40" src="{{ url_for('static', filename='images/sad.svg')}}">
+                                Something Broke
+                                <img style="margin-left: 15px;" width="40" src="{{ url_for('static', filename='images/sad.svg')}}"></h1>
+                            <a href="{{ url_for('highlights.load_page') }}" class="btn btn-lg btn-primary mt15" style="margin-bottom: 40px;">Back to homepage</a>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </section>
+{%  endblock %}

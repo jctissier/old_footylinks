@@ -1,0 +1,35 @@
+{% extends "layout.html" %}
+
+{% block style %}
+    <!-- Minified CSS -->
+    <style>
+        .box,.info>a{box-shadow:0 2px 5px 0 rgba(0,0,0,.16),0 2px 10px 0 rgba(0,0,0,.12)}body{padding-top:50px}.box{border-radius:3px;padding:10px 25px;text-align:right;display:block;margin-top:60px}.box-icon{background-color:#57a544;border-radius:50%;display:table;height:100px;margin:-61px auto 0;width:100px}.box-icon span{color:#fff;display:table-cell;text-align:center;vertical-align:middle}.info h4{font-size:26px;letter-spacing:2px;text-transform:uppercase}.info>p{color:#717171;font-size:16px;padding-top:10px;text-align:justify}.info>a,.info>a:hover{color:#fff;transition:all .5s ease 0s}.info>a{background-color:#03a9f4;border-radius:2px}.info>a:hover{background-color:#0288d1;box-shadow:0 2px 3px 0 rgba(0,0,0,.16),0 2px 5px 0 rgba(0,0,0,.12)}
+    </style>
+
+{% endblock %}
+
+{%  block body %}
+
+    <div class="container" style="margin-top:15px;margin-bottom: 50px;">
+        <h1 class="desktop-hidden" style="text-align: center;margin-top: 20px;">{{ title }}</h1>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <div class="box">
+                    <div class="box-icon">
+                        <span class="fa fa-4x fa-futbol-o"></span>
+                    </div>
+                    <div class="info">
+                        {% for i in final_links %}
+                            <div class="button-holder " style="text-align:center;margin-bottom: 20px;margin-top: 20px;">
+                                <a href="{{ i.1 }}" class="btn btn-sm" style="background: #22aba6;color: #FFFFFF!important;font-weight: 600;padding: 8px 16px;border-color: #22aba6;border-width: 0px;opacity: 1;">
+                                    {{ i.0 }}
+                                </a>
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

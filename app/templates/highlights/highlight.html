@@ -1,0 +1,58 @@
+{% extends "layout.html" %}
+
+    {% block style %}
+        <link type="text/css" id="colors" rel="stylesheet" href="{{ url_for('static', filename='css/fresh-bootstrap-table.min.css')}}">
+    {% endblock %}
+
+
+    {% block content %}
+
+        <!-- Loading GIF -->
+        <div class="row" style="padding-top: 15px;padding-bottom: 10px;" id="loading-gif">
+            <div class="col-lg-12 col-md-12" style="text-align: center;">
+                <img src="{{ url_for('static', filename='gifs/loading1-better.gif') }}" height="250" width="auto"/>
+                <br>
+                <i class="icon-soccer-ball-o"></i>
+                Finding Your Highlights...
+            </div>
+        </div>
+
+        <!-- Highlights Table -->
+        <div class="wrapper">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-10 col-md-offset-1" style="padding: 10px;margin-bottom: 10px;">
+
+                        <div class="fresh-table" id="content" style="display: none;">
+                            <table id="fresh-table" class="table" style="white-space: nowrap;">
+                                <!-- Static table headers -->
+                                <thead class="alert-primary">
+                                    <tr>
+                                        <th></th>
+                                        <th>Home</th>
+                                        <th></th>
+                                        <th>Away</th>
+                                        <th>Competition</th>
+                                        <th><i style="margin-right: 5px;" class="icon-calendar"></i>Date</th>
+                                    </tr>
+                                </thead>
+
+                                <tbody id="highlights-ajax-load">
+                                    <!-- Table content is dynamically created -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    {% endblock %}
+
+
+    {% block scripts %}
+        <script src={{ url_for('static', filename='bootstrap/js/bootstrap-table.js')}}></script>
+        <script src="{{ url_for('static', filename='js/highlights/highlight.js') }}"></script>
+    {% endblock %}
+
+

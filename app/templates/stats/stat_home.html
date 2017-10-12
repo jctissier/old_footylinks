@@ -1,0 +1,191 @@
+{% extends "layout.html" %}
+
+{% block style %}
+
+    <style>
+        #cssmenu,.content-quality p{font-family:'Open Sans',sans-serif}#cssmenu #menu-button,#cssmenu>ul>li>a{text-transform:uppercase;font-size:12px}.card{margin-top:20px;padding:30px;background-color:rgba(214,224,226,.2);-webkit-border-top-left-radius:5px;-moz-border-top-left-radius:5px;border-top-left-radius:5px;-webkit-border-top-right-radius:5px;-moz-border-top-right-radius:5px;border-top-right-radius:5px;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}.card.hovercard{position:relative;padding-top:0;overflow:hidden;text-align:center;background-color:#fff;background-color:rgba(255,255,255,1)}#cssmenu.align-center ul ul,#cssmenu.align-center>ul,#cssmenu.align-right ul ul{text-align:left}.card.hovercard .card-background{height:130px}.card-background img{-webkit-filter:blur(25px);-moz-filter:blur(25px);-o-filter:blur(25px);-ms-filter:blur(25px);filter:blur(25px);margin-left:-100px;margin-top:-200px;min-width:130%}.card.hovercard .useravatar{position:absolute;top:15px;left:0;right:0}.card.hovercard .useravatar img{height:150px;width:150px;max-width:200px;max-height:100px;-webkit-border-radius:50%;-moz-border-radius:50%;border-radius:50%;border:3px solid rgba(255,255,255,.5)}.card.hovercard .card-info .card-title{padding:0 5px;font-size:20px;line-height:1;background-color:transparent;-webkit-border-radius:4px;-moz-border-radius:4px;border-radius:4px;color:#fff}.card.hovercard .card-info{position:absolute;bottom:14px;left:0;right:0;overflow:hidden;font-size:12px;line-height:20px;color:#737373;text-overflow:ellipsis}.card.hovercard .bottom{padding:0 20px;margin-bottom:17px}.btn-pref .btn{-webkit-border-radius:0!important}@import url(http://fonts.googleapis.com/css?family=Open+Sans);#cssmenu,#cssmenu #menu-button,#cssmenu ul,#cssmenu ul li,#cssmenu ul li a{margin:0;padding:0;border:0;list-style:none;line-height:1;display:block;position:relative;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}#cssmenu:after,#cssmenu>ul:after{content:".";display:block;clear:both;visibility:hidden;line-height:0;height:0}#cssmenu.align-center>ul{font-size:0}#cssmenu.align-center>ul>li{float:none}#cssmenu>ul>li>a{padding:20px;text-decoration:none;color:#000;-webkit-transition:color .2s ease;-moz-transition:color .2s ease;-ms-transition:color .2s ease;-o-transition:color .2s ease;transition:color .2s ease}#cssmenu>ul>li.active>a,#cssmenu>ul>li:hover>a{color:#009ae1}#cssmenu>ul>li.has-sub>a{padding-right:25px}#cssmenu>ul>li.has-sub>a::after{position:absolute;top:21px;right:10px;width:4px;height:4px;border-bottom:1px solid #000;border-right:1px solid #000;content:"";-webkit-transform:rotate(45deg);-moz-transform:rotate(45deg);-ms-transform:rotate(45deg);-o-transform:rotate(45deg);transform:rotate(45deg);-webkit-transition:border-color .2s ease;-moz-transition:border-color .2s ease;-ms-transition:border-color .2s ease;-o-transition:border-color .2s ease;transition:border-color .2s ease}#cssmenu{line-height:1;background:#fff;width:100%}#cssmenu ul{width:100%;display:none}#cssmenu ul li,#cssmenu ul li:hover>ul>li,#cssmenu ul ul li{width:100%;height:auto;border-top:1px solid rgba(120,120,120,.15)}#cssmenu #menu-button::after,#cssmenu #menu-button::before{content:'';right:20px;width:15px;position:absolute}#cssmenu ul li a,#cssmenu ul ul li a{width:100%}#cssmenu.align-center>ul>li,#cssmenu.align-right>ul>li,#cssmenu>ul>li{float:none;display:block}#cssmenu ul ul li a{padding:5px;font-size:12px;color:#000;background:0 0}#cssmenu ul ul li a:hover,#cssmenu ul ul li:hover>a{color:#000}#cssmenu ul ul ul li a{padding-left:40px}#cssmenu ul ul,#cssmenu ul ul ul{position:relative;left:0;right:auto;width:100%;margin:0}#cssmenu ul ul li.has-sub>a::after,#cssmenu>ul>li.has-sub>a::after{display:none}#cssmenu #menu-button{display:block;padding:20px;color:#000;cursor:pointer}#cssmenu #menu-button::after{top:20px;display:block;height:2px;background:#000}#cssmenu #menu-button::before{top:25px;display:block;height:3px;border-top:2px solid #000;border-bottom:2px solid #000}#cssmenu .submenu-button{position:absolute;z-index:10;right:0;top:0;display:block;border-left:1px solid rgba(120,120,120,.15);height:52px;width:52px;cursor:pointer}#cssmenu .submenu-button::after,#cssmenu .submenu-button::before{content:'';display:block;background:#000;z-index:99;position:absolute}#cssmenu .submenu-button::after{top:21px;left:26px;width:1px;height:11px}#cssmenu .submenu-button::before{left:21px;top:26px;width:11px;height:1px}#cssmenu .submenu-button.submenu-opened:after{display:none}.content-quality p{margin-left:10px;font-size:14px;font-weight:600;line-height:17px}.heading-container p,.tabtop li a,section p{font-family:Lato,sans-serif}.content-quality p span{display:block}.tabtop li a{font-weight:700;color:#22aba6;border-radius:0;margin-right:22.01px;border:1px solid #ebebeb!important}.tabtop .active a:before{content:"♦";position:absolute;top:25px;left:55px;color:#22aba6;font-size:20px}.tabtop li a:hover{color:#22aba6!important;text-decoration:none}.tabtop .active a:hover{color:#fff!important}.tabtop .active a{background-color:#22aba6!important;color:#FFF!important}.tabtop li a:last-child{padding:10px 22px}.services a:hover{color:#000}.services h1{margin-top:0!important}.heading-container p{text-align:center;font-size:16px!important;text-transform:uppercase}.row{margin-top:40px;}.error-notice{margin:5px;padding-bottom:50px;}.update-nag{display:inline-block;font-size:14px;text-align:left;background-color:#fff;height:40px;-webkit-box-shadow:0 1px 1px 0 rgba(0,0,0,.2);box-shadow:0 1px 1px 0 rgba(0,0,0,.1)}.update-nag:hover{cursor:pointer;-webkit-box-shadow:0 1px 1px 0 rgba(0,0,0,.4);box-shadow:0 1px 1px 0 rgba(0,0,0,.3)}.update-nag>.update-split{background:#337ab7;width:33px;float:left;color:#fff!important;height:100%;text-align:center}.update-nag>.update-split>.glyphicon{position:relative;top:calc(50% - 9px)!important}.update-nag>.update-split.update-success{background:#5cb85c!important}.update-nag>.update-split.update-danger{background:#d9534f!important}.update-nag>.update-split.update-info{background:#5bc0de!important}.update-nag>.update-text{line-height:19px;padding-top:11px;padding-left:45px;padding-right:20px}
+    </style>
+
+
+{% endblock %}
+
+
+{% block body %}
+
+<!-- Modal -->
+<div class="modal fade" id="standingsModal" tabindex="-1" role="dialog" aria-labelledby="standingsModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content" style='font-family: Roboto,"Helvetica Neue","Open Sans",Arial,sans-serif;'>
+            <!-- Modal Header -->
+            <div class="modal-header" style="padding: 15px 15px 5px 15px;">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+                <h5 class="modal-title" id="standingsModalLabel" style="font-weight: bold;"></h5>
+            </div>
+
+            <!-- Modal content -->
+            <div class="modal-body" id="modal-content-form">
+                <!-- Add dynamic table content here -->
+            </div>
+
+            <!-- Modal footer -->
+            <div class="modal-footer" style="margin-top:0px;padding: 3px;">
+                <button type="button" class="btn btn-md" data-dismiss="modal" style="width: 100%">
+                    <i class="icon-close"></i> Close
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div id='cssmenu'>
+        <ul>
+           <li class='active has-sub'><a>Leagues</a>
+              <ul style="padding-left: 30px;padding-right: -30px;">
+{#                  TODO - onclick -> display: block -> none, class="open" -> remove class, class="menu-opened" -> remove class#}
+{#                  TODO - REDO the LOGOS - so that it fits in here -> shrink the size too#}
+                  <li><a onclick="load_stats('epl')"><img width="75" height="50" src="{{ url_for('static', filename='logos/epl-menu.png')}}" >
+                                                Premier League<i style="padding-left: 10px;" class="menu-icon icon-chevron-right"></i></a></li>
+                  <li><a onclick="load_stats('liga')" class="active"><img width="75" height="50" src="{{ url_for('static', filename='logos/liga-menu.png')}}" >
+                                                La Liga<i style="padding-left: 10px;" class="menu-icon icon-chevron-right"></i></a></li>
+                  <li><a onclick="load_stats('ligue1')" class="active"><img width="75" height="50" src="{{ url_for('static', filename='logos/ligue1-menu.png')}}" >
+                                                Ligue 1<i style="padding-left: 10px;" class="menu-icon icon-chevron-right"></i></a></li>
+                  <li><a onclick="load_stats('bundesliga')" class="active"><img width="75" height="50" src="{{ url_for('static', filename='logos/bundesliga-menu.png')}}" >
+                                                Bundesliga<i style="padding-left: 10px;" class="menu-icon icon-chevron-right"></i></a></li>
+                  <li><a onclick="load_stats('seriea')" class="active" ><img width="75" height="50" src="{{ url_for('static', filename='logos/seriea-menu.png')}}" >
+                                                Serie A<i style="padding-left: 10px;" class="menu-icon icon-chevron-right"></i></a></li>
+              </ul>
+            </li>
+            <li class='active has-sub'><a>Competitions</a>
+              <ul>
+                  <li><a href='#'>UEFA Champions League</a></li>
+                  <li><a href='#'>UEFA Europa League</a></li>
+              </ul>
+           </li>
+        </ul>
+    </div>
+</div>
+
+<div>
+    {# League Cards -> decided by dropdown #}
+    <div id="league-card">
+        <div class="card hovercard" style="margin-top: 0px;">
+            <div class="card-background">
+                <img class="card-bkimg" alt="" src="{{ url_for('static', filename='images/card-img.jpg')}}" >
+            </div>
+            <div class="useravatar" id="league_logo">
+                <img alt="" src="{{ url_for('static', filename='logos/blank.png') }}">
+            </div>
+            <div class="card-info"> <span class="card-title" id="title"></span>
+
+            </div>
+        </div>
+        <div class="btn-pref btn-group btn-group-justified btn-group-lg" role="group" aria-label="...">
+            <div class="btn-group" role="group">
+                <button type="button" id="standings-tab" class="btn btn-info" href="#tab1" data-toggle="tab"><span class="menu-icon icon-th-list"></span>
+                    <div>Standings</div>
+                </button>
+            </div>
+            <div class="btn-group" role="group">
+                <button type="button" id="topstats-tab" class="btn btn-default" href="#tab2" data-toggle="tab"><span class="menu-icon icon-line-chart"></span>
+                    <div>Top Scorers & Assists</div>
+                </button>
+            </div>
+        </div>
+
+        <div class="well" style="background-color: transparent;padding: 0px;">
+            <div class="tab-content">
+                <span id="current_league_name" style="display: none;"></span>
+
+                <!-- Tab 1 - Standings -->
+                <div class="tab-pane fade active in" id="tab1">
+                    <!-- Request issue with the AJAX response -->
+                    <div class="error-notice" id="ajax-fail-1" style="margin-top: 10px;text-align: center;display: none;">
+                        <div class="update-nag">
+                            <div class="update-split update-danger"><i class="icon-warning" style="line-height: 2.7;"></i></div>
+                            <div class="update-text"> <strong>There was an issue with retrieving the data, please reload the page.</strong></div>
+                        </div>
+                    </div>
+                    <!-- Loading gif -->
+                    <div class="row" style="margin: 0px;padding-bottom: 10px;" id="gif-tab1">
+                        <div class="col-lg-12 col-md-12" style="text-align: center;color: white;">
+                            <img src="{{ url_for('static', filename='gifs/loading1.gif') }}" height="150" width="auto"/>
+                        </div>
+                    </div>
+                    <!-- Load error message to choose league -->
+                    <div class="error-notice" id="errorAlert-1" style="margin-top: 10px;text-align: center;">
+                        <div class="update-nag">
+                            <div class="update-split update-danger"><i class="icon-warning" style="line-height: 2.7;"></i></div>
+                            <div class="update-text"> <strong><b>Choose a League from the menu</b></strong></div>
+                        </div>
+                    </div>
+                    <!-- Load current league Standings -->
+                    <div class="error-notice" id="load-msg-1" style="margin-top: 10px;text-align: center;display: none;">
+                        <a onclick="load_extra_tab($('#current_league_name').text())">
+                            <div class="update-nag">
+                                <div class="update-split update-success"><i class="icon-list-ol" style="line-height: 2.7;"></i></div>
+                                <div class="update-text"> <strong>Load Standings for - </strong><span id="load-league-1"></span> </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="table-responsive">
+                        <table class="table table-striped table-hover" style="margin-bottom: 0px;" id="standings_content">
+                            <!-- Dynamic content inserted here -->
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Tab 2 - Top Scorers/ Top Assists -->
+                <div class="tab-pane fade" id="tab2">
+                    <!-- Request issue with the AJAX response -->
+                    <div class="error-notice" id="ajax-fail-2" style="margin-top: 10px;text-align: center;display: none;">
+                        <div class="update-nag">
+                            <div class="update-split update-danger"><i class="icon-warning" style="line-height: 2.7;"></i></div>
+                            <div class="update-text"> <strong>There was an issue with retrieving the data, please reload the page.</strong></div>
+                        </div>
+                    </div>
+                    <!-- Loading GIF -->
+                    <div class="row" style="margin: 0px;padding-bottom: 10px;" id="gif-tab2">
+                        <div class="col-lg-12 col-md-12" style="text-align: center;color: white;">
+                            <img src="{{ url_for('static', filename='gifs/loading1.gif') }}" height="150" width="auto"/>
+                        </div>
+                    </div>
+                    <!-- Error message that first appears on page load -->
+                    <div class="error-notice" id="errorAlert-2" style="margin-top: 10px;text-align: center;">
+                        <div class="update-nag">
+                            <div class="update-split update-danger"><i class="icon-warning" style="line-height: 2.7;"></i></div>
+                            <div class="update-text"> <strong><b>Choose a League from the menu</b></strong></div>
+                        </div>
+                    </div>
+                    <!-- Load current league Stats -->
+                    <div class="error-notice" id="load-msg-2" style="margin-top: 10px;text-align: center;display: none;">
+                        <a onclick="load_extra_tab($('#current_league_name').text())">
+                            <div class="update-nag">
+                                <div class="update-split update-success"><i class="icon-list-ol" style="line-height: 2.7;"></i></div>
+                                <div class="update-text"> <strong>Load Top Scorers & Assists for - </strong><span id="load-league-2"> </span> </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="table-responsive">
+                        <table class="table table-striped table-hover" style="margin-bottom: 0px;" id="topstats_content">
+                            <!-- Dynamic content inserted here -->
+                        </table>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        {#   End of Tabs     #}
+
+    </div>
+</div>
+
+{%  endblock %}
+
+
+{% block scripts %}
+
+    <script async src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src={{ url_for('static', filename='js/stats/stat.min.js')}}></script>
+
+{% endblock %}

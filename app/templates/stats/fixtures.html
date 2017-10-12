@@ -1,0 +1,116 @@
+{% extends "layout.html" %}
+
+{% block style %}
+    <style>
+       @import url(https://fonts.googleapis.com/css?family=Arima+Madurai:400);.back,.card-container,.front{min-height:325px;display:block;border-radius:4px}.error-notice{margin:5px}.oaerror{width:90%;background-color:#FFF;padding:20px;border:1px solid #eee;border-left-width:5px;border-radius:3px;margin:0 auto;font-family:'Open Sans',sans-serif;font-size:16px}.card .motto,.card .name{font-family:'Arima Madurai',cursive;font-weight:400}.danger{border-left-color:#d9534f;background-color:rgba(217,83,79,.1)}.danger strong{color:#d9534f}body{font-size:14px}.btn:active,.btn:focus,.btn:hover{outline:0!important}.card-container{-webkit-perspective:800px;-moz-perspective:800px;-o-perspective:800px;perspective:800px;margin-bottom:30px}.card-container.hover.manual-flip .card,.card-container:not(.manual-flip):hover .card{-webkit-transform:rotateY(180deg);-moz-transform:rotateY(180deg);-o-transform:rotateY(180deg);transform:rotateY(180deg)}.card-container.static.hover .card,.card-container.static:hover .card{-webkit-transform:none;-moz-transform:none;-o-transform:none;transform:none}.card{-webkit-transition:-webkit-transform .5s;-moz-transition:-moz-transform .5s;-o-transition:-o-transform .5s;transition:transform .5s;-webkit-transform-style:preserve-3d;-moz-transform-style:preserve-3d;-o-transform-style:preserve-3d;transform-style:preserve-3d;position:relative;background:#FFF;border-radius:4px;color:#444}.card .back-footer,.card .footer,.card .motto,.card .profession{color:#999;text-align:center}.back,.front{-webkit-backface-visibility:hidden;-moz-backface-visibility:hidden;-o-backface-visibility:hidden;backface-visibility:hidden;position:absolute;top:0;left:0;background-color:#FFF}.front{z-index:2}.back{-webkit-transform:rotateY(180deg);-moz-transform:rotateY(180deg);-o-transform:rotateY(180deg);transform:rotateY(180deg);z-index:3}.back .btn-simple{position:absolute;left:0;bottom:4px}.card-container,.front{width:100%;-webkit-box-shadow:0 0 19px 0 rgba(0,0,0,.16);-moz-box-shadow:0 0 19px 0 rgba(0,0,0,.16);box-shadow:0 0 19px 0 rgba(0,0,0,.16);overflow:hidden}.back,.card-container{width:100%;-webkit-box-shadow:0 0 19px 0 rgba(0,0,0,.16);-moz-box-shadow:0 0 19px 0 rgba(0,0,0,.16);box-shadow:0 0 19px 0 rgba(0,0,0,.16);overflow:auto}.card .cover{height:200px;overflow:hidden;border-radius:4px 4px 0 0}.card .cover img{width:100%}.card .user img{background:#FFF;border:4px solid #FFF;width:100%}.card .content{background-color:rgba(0,0,0,0);box-shadow:none}.card .content .main{min-height:160px}.card .name{font-size:20px;line-height:28px;margin:10px 0 0;text-align:center;text-transform:capitalize}.card h5{margin:5px 0;font-weight:400;line-height:20px}.card .profession{margin-bottom:20px}.card .footer{border-top:1px solid #EEE;margin:30px 20px 0;padding:10px 0 0}.card .back-footer{margin:30px 0 0;padding:10px 0 0}.card .header{padding:15px 20px 0}.card .motto{font-size:14px;padding-bottom:10px}.btn-simple{opacity:.8;color:#666;background-color:transparent}.btn-simple:focus,.btn-simple:hover{background-color:transparent;box-shadow:none;opacity:1}.btn-simple i{font-size:16px}.navbar-default .navbar-brand-logo .brand{color:#555}@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none){.back,.front{-ms-backface-visibility:visible;backface-visibility:visible}.back{visibility:hidden;-ms-transition:all .2s cubic-bezier(.92,.01,.83,.67)}.front{z-index:4}.card-container.manual-flip.hover .back,.card-container:not(.manual-flip):hover .back{z-index:5;visibility:visible}}.update-nag{display:inline-block;font-size:14px;text-align:left;background-color:#fff;height:40px;-webkit-box-shadow:0 1px 1px 0 rgba(0,0,0,.2);box-shadow:0 1px 1px 0 rgba(0,0,0,.1)}.update-nag:hover{cursor:pointer;-webkit-box-shadow:0 1px 1px 0 rgba(0,0,0,.4);box-shadow:0 1px 1px 0 rgba(0,0,0,.3)}.update-nag>.update-split{background:#337ab7;width:33px;float:left;color:#fff!important;height:100%;text-align:center}.update-nag>.update-split>.glyphicon{position:relative;top:calc(50% - 9px)!important}.update-nag>.update-split.update-success{background:#5cb85c!important}.update-nag>.update-split.update-danger{background:#d9534f!important}.update-nag>.update-split.update-info{background:#5bc0de!important}.update-nag>.update-text{line-height:19px;padding-top:11px;padding-left:45px;padding-right:20px}
+    </style>
+
+{% endblock %}
+
+
+{% block content %}
+
+    <!-- Error message -->
+    <div class="error-notice" id="errorAlert" style="display: none;margin-top: 20px;">
+        <div class="oaerror danger">
+            <strong>There's an issue on my end</strong> - Please refresh the page.
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="fixturesModal" tabindex="-1" role="dialog" aria-labelledby="fixturesModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content" style='font-family: Roboto,"Helvetica Neue","Open Sans",Arial,sans-serif;'>
+                <!-- Modal Header -->
+                <div class="modal-header" style="padding: 15px 15px 5px 15px;">
+                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+                    <h5 class="modal-title" id="fixturesModalLabel">
+                    </h5>
+                </div>
+
+                <!-- Modal content -->
+                <div class="modal-body" id="fixtures-modal-content" style="padding: 10px;">
+                    <!-- Add dynamic table content here -->
+                </div>
+
+                <!-- Modal footer -->
+                <div class="modal-footer" style="margin-top:0px;padding: 3px;">
+                    <button type="button" class="btn btn-md" data-dismiss="modal" style="width: 100%">
+                        <i class="icon-close"></i> Close
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container" style="padding-top: 30px;">
+
+        {% for card in cards | batch(2, None) %}
+
+            <div class="row">
+
+                {% for c in card %}
+
+                    <div class="col-md-6 col-lg-6 col-sm-12">
+                        <div class="card-container manual-flip">
+                            <div class="card">
+                                <div class="front">
+                                    <div class="cover">
+                                        <img src={{ url_for('static', filename='logos/' + c.0)}} >
+                                    </div>
+                                    <div class="content">
+                                        <h3 class="name">{{ c.1 }}</h3>
+                                        <div class="footer">
+                                            <button class="btn" onclick="rotateCard(this, '{{ c.2 }}', '{{ c.4 }}')">
+                                                <i class="icon-calendar"></i> Find Fixtures
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div> <!-- end front panel -->
+                                <div class="back" style="overflow-y: scroll;">
+                                    <div class="header">
+                                        <h5 class="motto" style="padding-bottom: 0px;">{{ c.3 }}</h5>
+                                    </div>
+
+                                    <div style="text-align: center;padding-bottom: 10px;">
+                                        <button class="btn btn-primary btn-xs" onclick="load_league_table('{{ c.2 }}', '{{ c.4 }}', true, '{{ c.1 }}')" data-toggle="modal" data-target="#fixturesModal" id="btn-activate-modal-{{ c.4 }}" style="display: none;">
+                                            <i class="icon-expand"></i> Find More Fixtures
+                                        </button>
+                                    </div>
+                                    <!-- Alert message -> no fixtures found -->
+                                    <div class="error-notice" id="errorAlert-{{ c.4 }}" style="display: none;margin-top: 10px;text-align: center;">
+                                        <div class="update-nag">
+                                            <div class="update-split update-danger"><i class="icon-warning" style="line-height: 2.7;"></i></div>
+                                            <div class="update-text"> <strong><b>Sorry</b></strong> - There are no upcoming fixtures! </div>
+                                        </div>
+                                    </div>
+                                    <div class="content">
+                                        <!-- loading spinner -->
+                                        <div id="loading-{{ c.4 }}"  style="text-align: center;margin-top: 15px;">
+                                            <img width="30" height="30" src="{{ url_for('static', filename='gifs/spin.gif')}}" >
+                                            <br>
+                                            <span>Loading...</span>
+                                        </div>
+                                        <div class="main" id={{ c.4 }}></div>
+                                    </div>
+                                </div> <!-- end back panel -->
+                            </div> <!-- end card -->
+                        </div>
+                    </div>
+
+                {% endfor %}
+
+            </div>
+
+        {% endfor %}
+
+    </div>
+
+
+{% endblock %}
+
+
+{% block scripts %}
+    <script async src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script async type="text/javascript" src={{ url_for('static', filename='js/fixtures/fixture.min.js')}}></script>
+{% endblock %}

@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>FootyLinks</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta http-equiv="Expires" content="30" />
+
+    <!-- bootstrap CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+    {% block style %}
+    {% endblock %}
+
+    <!-- Custom css -->
+	<link type="text/css" id="colors" rel="stylesheet" href="{{ url_for('static', filename='css/sea-green.min.css')}}">
+
+    <!-- Favicons -->
+    <link rel="shortcut icon" type="image/png" sizes="32x32" href="{{ url_for('static', filename='images/favicon-32x32.png')}}"/>
+    <link rel="shortcut icon" type="image/png" sizes="16x16" href="{{ url_for('static', filename='images/favicon-16x16.png')}}"/>
+    <link rel="shortcut icon" type="image/png" sizes="32x32" href="{{ url_for('static', filename='images/favicon.ico')}}"/>
+
+    {% block script %}
+    {% endblock %}
+
+</head>
+
+<body>
+    <div id="globalWrapper" style="overflow-x: hidden;position: relative;">
+
+        <!-- Desktop navbar -->
+        <div>
+            <nav class="[ navbar navbar-fixed-top ][ navbar-bootsnipp animate ] hidden-xs" role="navigation" style="background-color: #22aba6;border-color: transparent;border-bottom-width: 5px;">
+                <div class="[ container ]">
+                    <div class="[ collapse navbar-collapse ]" id="bs-example-navbar-collapse-1">
+                        <ul class="[ nav navbar-nav navbar-left ]">
+                            <li>
+                                <a href="{{ url_for('highlights.load_page') }}" class="[ animate ] main-panel-title" style="line-height: 2;font-size: 16px;padding-top: 10px;padding-bottom: 8px"><img width="150" height="30" src="{{ url_for('static', filename='logos/footylinks-logo-white.png')}}"></a>
+                            </li>
+                        </ul>
+                        <ul class="[ nav navbar-nav navbar-right ]">
+                            <li>
+                                <a href="{{ url_for('highlights.load_page') }}" class="[ animate ] main-panel-title" style="line-height: 2;font-size: 16px;padding-top: 10px;padding-bottom: 8px"><span class="icon-play-circle" style="margin-right: 5px;"></span>Highlights</a>
+                            </li>
+                            <li>
+                                <a class="animate main-panel-title" href="{{ url_for('livestreams.load_page') }}" style="line-height: 2;font-size: 16px;padding-top: 10px;padding-bottom: 8px"><span class="icon-futbol-o">
+                                    </span>Live Streams<span class="label label-success" style="margin-left:5px;border-radius: 10px;padding: 5px 12px;text-transform: uppercase;font-size: 10px;" id="livestream_count"></span>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="animate main-panel-title" href="{{ url_for('stats.stats_homepage') }}" style="line-height: 2;font-size: 16px;padding-top: 10px;padding-bottom: 8px"><span class="icon-list-ol" style="margin-right: 5px;"></span>Stats</a>
+                            </li>
+                            <li>
+                                <a class="animate main-panel-title" href="{{ url_for('stats.fixtures_load_page') }}" style="line-height: 2;font-size: 16px;padding-top: 10px;padding-bottom: 8px"><span class="icon-calendar" style="margin-right: 5px;"></span>Fixtures</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+
+        <!--  Mobile Nav Bar  -->
+        <nav class="navbar navbar-inverse navbar-fixed-top animate desktop-hidden" style="background-color: #22aba6;border-color: transparent;">
+            <div class="container navbar-more visible-xs"></div>
+            <div class="container">
+                <ul class="nav navbar-nav navbar-right mobile-bar">
+                    <li>
+                        <a href="{{ url_for('highlights.load_page') }}" class="main-panel-title" >
+                            <span class="icon-play-circle" style="display: block;font-size: 30px;"></span>
+                            Highlights
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{ url_for('livestreams.load_page') }}" class="main-panel-title" >
+                            <span class="icon-futbol-o" style="display: block;font-size: 30px;"></span>
+                            Streams
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{ url_for('stats.stats_homepage') }}" class="main-panel-title">
+                            <span class="icon-list-ol" style="display: block;font-size: 30px;"></span>
+                            Stats
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{ url_for('stats.fixtures_load_page') }}" class="main-panel-title" >
+                            <span class="icon-calendar" style="display: block;font-size: 30px;"></span>
+                            Fixtures
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <section>
+            {% block links %}
+            {% endblock %}
+
+            {% if not links_page %}
+                <div class="container" style="align-items: center;">
+
+                    <div class="row" style="margin-top: 20px;" id="load-social-links">
+
+                        <!-- Page body content -->
+                        {%  block body %}
+                        {%  endblock %}
+
+                    </div>
+
+                    <div class="row">
+                        {%  block content %}
+                        {%  endblock %}
+                    </div>
+
+                </div>
+            {% endif %}
+         </section>
+
+    </div>
+
+    <!-- footer -->
+    <footer style="padding-top: 0px;padding-bottom:0px;">
+        <section id="footerRights" style="margin-top: 0px; border-top: none; padding-top: 20px; padding-bottom: 20px;">
+            <div class="row" style="margin-right: 0px;margin-left: 0px;">
+                <ul class="socialNetwork" style="margin-bottom: 0px;text-align: center;">
+                    <li class="footerFormat">
+                        <a href="https://github.com/jctissier/Euro2016_TerminalApp" class="tips" title="" data-original-title="Download the source code for this project"><i class="icon-github fa-2x iconRounded"></i></a>
+                    </li>
+                    <li class="footerFormat" style="margin-right: 5px;"></li>
+                    <li class="footerFormat">
+                        <a href="https://www.notion.so/FootyLinks-Documentation-7b66a15ed993420bb1ec514a534039d5" class="tips" title="" data-original-title="Project documentation"><i class="icon-book fa-2x iconRounded"></i></a>
+                    </li>
+                    <li class="footerFormat" style="margin-right: 5px;"></li>
+                    <li class="footerFormat">
+                        <a href="https://gitter.im/FootyLinks/Lobby" class="tips" title="" data-original-title="Chat with me on Gitter"><i class="icon-comments fa-2x iconRounded"></i></a>
+                    </li>
+                </ul>
+            </div>
+        </section>
+    </footer>
+
+    <!-- Scripts -->
+    {% block scripts %}
+    {% endblock %}
+    <script type="text/javascript">
+        /**
+         * Create badge with number of current Live Streams
+         *  - badge will not be created on /livestreams URL
+         */
+        jQuery(document).ready(function($) {
+            if(!(window.location.href.indexOf("livestreams") > -1)) {
+               $.ajax({
+                    type: 'GET',
+                    url: '/livestreams-ajax'
+                })
+                    .done(function (data) {
+                        $('#livestream_count').text(data.size);
+                    })
+            }
+        });
+    </script>
+
+</body>
+</html>
